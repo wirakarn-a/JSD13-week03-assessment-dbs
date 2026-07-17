@@ -17,4 +17,16 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- After reading the scenario, I checked the data in Supabase to see which table the side dishes are stored in.
+-- All the side dish information is in the 'menuitems' table, filtered by the 'Side' category. So I decided to 
+-- query this table to give the designer an easy and accurate reference for the menu board.
+-- Data needed: name, price, category
+-- Table involved: menuitems
+-- SQL concept used:
+--    - SELECT = to choose only the name and price columns
+--    - WHERE = to filter rows where category equals 'Side'
+
+-- Write a query to find the name and price of all menu items that are in the 'Side' category.
+select menuitems.name, menuitems.price
+from menuitems
+where category = 'Side'

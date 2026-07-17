@@ -17,4 +17,17 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- This scenario wants to know which ingredients would be affected if 'Freshest Farm Produce' is delayed.
+-- So I will use the ingredients and suppliers tables together, joined on supplier_id, to identify which ingredients 
+-- depend on that supplier. This helps the manager plan an alternative if needed without impacting the menu too much.
+-- Data needed: ingredient name, supplier id, supplier name
+-- Table involved: ingredients, suppliers
+-- SQL concept used:
+--    - inner join = to connect ingredients and suppliers via the shared supplier_id
+--    - where = to filter only the ingredients tied to 'Freshest Farm Produce'
+
+-- Write a query to find the names of all ingredients supplied by 'Freshest Farm Produce'.
+select ingredients.name
+from ingredients
+inner join suppliers on ingredients.supplier_id = suppliers.supplier_id
+where suppliers.name = 'Freshest Farm Produce'

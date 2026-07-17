@@ -17,4 +17,15 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- This scenario shows that I would use the 'staff' table, because the manager needs to contact every staff member 
+-- whose role is 'Cook'. The table includes each staff member's name and role, which is what's needed here.
+-- Data needed: first_name, last_name, role
+-- Table involved: staff
+-- SQL concept used:
+--    - SELECT = to choose only the first_name and last_name columns
+--    - WHERE = to filter rows where role equals 'Cook'
+
+-- Write a query to list the first_name and last_name of all staff members whose role is 'Cook'.
+select first_name, last_name
+from staff
+where role = 'Cook'

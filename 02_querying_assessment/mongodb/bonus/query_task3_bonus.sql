@@ -17,4 +17,15 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- The manager wants to avoid over-ordering ingredients that are already well-stocked, so they need a list of ingredient names
+-- where the stock level is 100 or more. I'll use the ingredients table to identify which items to deprioritize.
+-- Data needed: ingredient name, stock level
+-- Table involved: ingredients
+-- SQL concept used:
+--    - select = to choose the ingredient name
+--    - where (>=) = to filter for ingredients with a stock level of 100 or higher
+
+-- Write a query to find the name of all rows in the Ingredients table where the stock_level is greater than or equal to 100.
+select name
+from ingredients
+where stock_level >= 100

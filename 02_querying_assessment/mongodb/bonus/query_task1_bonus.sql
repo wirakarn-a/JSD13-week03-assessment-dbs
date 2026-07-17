@@ -17,4 +17,13 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- Data needed: name, price, category
+-- Table involved: menuitems
+-- SQL concept used:
+--    - SELECT = to choose all menuitems
+--    - WHERE = to filter price under $10
+
+-- Write a query to find the name and price of all rows in the MenuItems table
+select menuitems.name, menuitems.price, menuitems.category
+from menuitems
+where price < 10

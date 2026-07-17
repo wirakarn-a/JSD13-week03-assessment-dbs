@@ -17,4 +17,18 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// The manager needs to contact every staff member whose role is 'Cook'. 
+// I'll use the staff collection, filtering for role: "Cook" since the manager needs to identify and contact them.
+// - collection used: staff (first_name, last_name, role)
+// - MongoDB used: 
+//      - find () to match document where role = "Cook"
+//      - Projection return only first_name and last_name, setting _id: 0 to exclude
+
+// Write a query on the staff collection to find the first_name and last_name
+// of all documents where the role is 'Cook'.
+use("chrome-burger-db");
+
+db.staff.find(
+    { role: "Cook" },
+    { first_name: 1, last_name: 1, _id: 0 }
+)

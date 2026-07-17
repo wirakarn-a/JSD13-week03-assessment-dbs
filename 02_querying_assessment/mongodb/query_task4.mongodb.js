@@ -18,4 +18,24 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// After read the scenario, the owner wants to know how much total revenue the truck generated across 
+// all recorded orders for use in a financial summary report. I decided to use the mock orders data since it contains 
+// the total_price for each order.
+// Collection used: orders (focus on total_price)
+// MongoDB concept used: 
+//    - Aggregate with $group stage
+//    - using '_id: null' to combine all documents into single group
+//    - using '$sum' to to add up the 'total_price' field across all orders into one value named 'total_revenue' 
+
+// Write an aggregation query on the orders collection to calculate the total revenue from all orders combined.
+// The result should be a single document with a field named total_revenue.
+use("chrome-burger-db");
+
+db.orders.aggregate([
+    {
+        $group: {
+            _id: null,
+            total_revenue: { $sum: "$total_price" }
+        }
+    }
+])

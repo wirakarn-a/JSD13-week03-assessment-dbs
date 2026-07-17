@@ -17,4 +17,18 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// At first, I read the scenario and objective of this task, which is to find the stock levels of ingredients 
+// to avoid over-ordering. They need a list of stock level of 100 or more. So, i decided to use mock ingredients data
+// to find out the stock level.
+// Collection used: ingredients (_id, name, stock_level, unit)
+// MongoDB concept used:
+//    - find ()
+//    - $gte to match ingredients with stock_level of 100 or higher
+//    - sort {1} to order the results ascending, making it easier for the manager to scan from lowest to highest stock
+
+// Write a query to find all ingredients in the ingredients collection that have a stock_level of 100.00 or more.
+use("chrome-burger-db");
+
+db.ingredients.find(
+    { stock_level: { $gte: 100 }}
+).sort( { stock_level: 1})
